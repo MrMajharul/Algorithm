@@ -1,0 +1,56 @@
+import java.util.*;
+
+class DFSShortestPath {
+    // Function to find the shortest path using DFS
+    static List<Integer> dfsShortestPath(Map<Integer, List<Integer>> graph, int start, int target) {
+        List<Integer> path = new ArrayList<>();
+        Set<Integer> visited = new HashSet<>();
+        dfs(graph, start, target, visited, path, new ArrayList<>());
+        return path; // If path is found, return it
+    }
+
+    // Helper method to perform DFS
+    private static void dfs(Map<Integer, List<Integer>> graph, int current, int target, 
+                            Set<Integer> visited, List<Integer> path, List<Integer> tempPath) {
+        visited.add(current);
+        tempPath.add(current);
+
+        // If target node is reached, update the path
+        if (current == target) {
+            if (path.isEmpty() || tempPath.size() < path.size()) {
+                path.clear();
+                path.addAll(tempPath);
+            }
+        } else {
+            // Explore neighbors
+            for (int neighbor : graph.get(current)) {
+                if (!visited.contains(neighbor)) {
+                    dfs(graph, neighbor, target, visited, path, tempPath);
+                }
+            }
+        }
+
+        // Backtrack
+        visited.remove(current);
+        tempPath.remove(tempPath.size() - 1);
+    }
+
+    public static void main(String[] args) {
+        // Define the given graph as an adjacency list
+        Map<Integer, List<Integer>> graph = new HashMap<>();
+        graph.put(0, Arrays.asList(1, 2));
+        graph.put(1, Arrays.asList(0, 3));
+        graph.put(2, Arrays.asList(0, 3));
+        graph.put(3, Arrays.asList(1, 2));
+
+        int start = 0, target = 3;
+        List<Integer> shortestPath = dfsShortestPath(graph, start, target);
+
+        // Print the shortest path
+        if (shortestPath.isEmpty()) {
+            System.out.println("No path found.");
+        } else {
+            System.out.println("Shortest path from " + start + " to " + target + ": " + shortestPath);
+        }
+    }
+}
