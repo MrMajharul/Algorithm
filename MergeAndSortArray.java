@@ -17,9 +17,11 @@ public class MergeAndSortArray {
         System.arraycopy(arr2, 0, combined, arr1.length, arr2.length);
 
         System.out.println("First array:  " + Arrays.toString(arr1));
-        System.out.println("Sorted array:");
-        System.out.println(Arrays.toString(arr1));
+       
+       
         System.out.println("Second array: " + Arrays.toString(arr2));
+        System.out.println("Sorted array:");
+        System.out.println(Arrays.toString(arr2));
         System.out.println("Combined array: " + Arrays.toString(combined));
 
         Arrays.sort(combined);
