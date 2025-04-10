@@ -61,7 +61,7 @@ algorithms/
 1. Clone the repository:
 ```bash
    git clone https://github.com/MrMajharul/Algorithm.git
-   cd algorithms
+   cd Algorithms
  ```
 
 2. Compile and run individual algorithms using a terminal or Java IDE:
