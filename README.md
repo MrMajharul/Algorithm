@@ -60,7 +60,7 @@ algorithms/
 
 1. Clone the repository:
 ```bash
-   git clone https://github.com/MrMajharul/algorithm.git
+   git clone https://github.com/MrMajharul/Algorithm.git
    cd algorithms
  ```
 
