@@ -1,3 +1,4 @@
+package algorithm.sorting;
 class QuickSortLinkedListLomuto {
 
     static class Node {

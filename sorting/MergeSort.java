@@ -1,3 +1,4 @@
+package sorting;
 class MergeSort {
     void merge(int arr[], int left, int mid, int right) {
         int i = left, j = mid + 1;

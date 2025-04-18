@@ -1,3 +1,4 @@
+package sorting;
 class QuickSortLinkedList {
 
     // Node class
